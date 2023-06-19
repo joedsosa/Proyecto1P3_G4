@@ -1,0 +1,19 @@
+#ifndef TRIANGULO_H
+#define TRIANGULO_H
+
+#include "Figura.h"
+
+class Triangulo : public Figura {
+private:
+    int ladoA;
+    int ladoB;
+    int ladoC;
+
+public:
+    Triangulo(int a, int b, int c);
+    void Dibujar() const override;
+    int CalcularArea() const override;
+    int CalcularPerimetro() const override;
+};
+
+#endif
