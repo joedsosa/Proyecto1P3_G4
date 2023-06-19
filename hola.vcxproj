@@ -132,6 +132,8 @@
     <ClCompile Include="Figura.cpp" />
     <ClCompile Include="hola.cpp" />
     <ClCompile Include="Paralelogramo.cpp" />
+    <ClCompile Include="Rombo.cpp" />
+    <ClCompile Include="Trapecio.cpp" />
     <ClCompile Include="Triangulo.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -139,6 +141,8 @@
     <ClInclude Include="Cuadrado.h" />
     <ClInclude Include="Figura.h" />
     <ClInclude Include="Paralelogramo.h" />
+    <ClInclude Include="Rombo.h" />
+    <ClInclude Include="Trapecio.h" />
     <ClInclude Include="Triangulo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

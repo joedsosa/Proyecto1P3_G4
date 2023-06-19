@@ -5,12 +5,13 @@
 
 class Triangulo : public Figura {
 private:
-    int ladoA;
-    int ladoB;
-    int ladoC;
+    int a;
+    int b;
+    int c;
+    int h;
 
 public:
-    Triangulo(int a, int b, int c);
+    Triangulo(int a, int b, int c,int h);
     void Dibujar() const override;
     int CalcularArea() const override;
     int CalcularPerimetro() const override;

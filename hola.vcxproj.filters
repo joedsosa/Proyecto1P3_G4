@@ -33,6 +33,12 @@
     <ClCompile Include="Cometa.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Rombo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Trapecio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Figura.h">
@@ -48,6 +54,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Cometa.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Rombo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Trapecio.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

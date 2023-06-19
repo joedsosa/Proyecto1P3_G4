@@ -1,15 +1,15 @@
+#include "Trapecio.h"
 
-#include "Triangulo.h"
-#include <iostream>
-#include <iomanip>
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <iostream>
+#include <fstream>
+#include <string>
 using namespace std;
-
-Triangulo::Triangulo(int a, int b, int c, int h) : a(a), b(b), c(c), h(h) {}
-void Triangulo::Dibujar() const {
-    std::ifstream archivo("triangulo.txt");
+Trapecio::Trapecio(int a, int b, int B, int c, int h) : a(a), b(b), B(b), h(h) {}
+void Trapecio::Dibujar() const {
+    std::ifstream archivo("trapecio.txt");
 
     if (!archivo) {
         std::cout << "Error al abrir el archivo del esquema.\n";
@@ -20,6 +20,15 @@ void Triangulo::Dibujar() const {
     while (std::getline(archivo, linea)) {
         if (linea.find("[a={a}]") != std::string::npos) {
             linea.replace(linea.find("[a={a}]"), 7, "a =   " + std::to_string(a));
+        }
+        else if (linea.find("[d={d}]") != std::string::npos) {
+            linea.replace(linea.find("[d={d}]"), 7, "d =   " + std::to_string(h));
+        }
+        else if (linea.find("[D={D}]") != std::string::npos) {
+            linea.replace(linea.find("[D={D}]"), 7, "D =   " + std::to_string(h));
+        }
+        else if (linea.find("[b={b}]") != std::string::npos) {
+            linea.replace(linea.find("[b={b}]"), 7, "b =   " + std::to_string(b));
         }
         else if (linea.find("[{a}]") != std::string::npos) {
             linea.replace(linea.find("[{a}]"), 5, std::to_string(a) + "    ");
@@ -42,11 +51,10 @@ void Triangulo::Dibujar() const {
     archivo.close();
 }
 
-
-int Triangulo::CalcularArea() const {
-    return (b * h) / 2;
+int Trapecio::CalcularArea() const {
+    return ((B + b) * h) / 2;
 }
 
-int Triangulo::CalcularPerimetro() const {
-    return a + b + c;
+int Trapecio::CalcularPerimetro() const {
+    return B + b + a + c;
 }

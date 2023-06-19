@@ -1,15 +1,14 @@
-
-#include "Triangulo.h"
-#include <iostream>
-#include <iomanip>
+#include "Rombo.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <iostream>
+#include <fstream>
+#include <string>
 using namespace std;
-
-Triangulo::Triangulo(int a, int b, int c, int h) : a(a), b(b), c(c), h(h) {}
-void Triangulo::Dibujar() const {
-    std::ifstream archivo("triangulo.txt");
+Rombo::Rombo(int a,int d, int D) : a(a), d(d), D(D) {}
+void Rombo::Dibujar() const {
+    std::ifstream archivo("rombo.txt");
 
     if (!archivo) {
         std::cout << "Error al abrir el archivo del esquema.\n";
@@ -20,6 +19,15 @@ void Triangulo::Dibujar() const {
     while (std::getline(archivo, linea)) {
         if (linea.find("[a={a}]") != std::string::npos) {
             linea.replace(linea.find("[a={a}]"), 7, "a =   " + std::to_string(a));
+        }
+        else if (linea.find("[d={d}]") != std::string::npos) {
+            linea.replace(linea.find("[d={d}]"), 7, "d =   " + std::to_string(d));
+        }
+        else if (linea.find("[D={D}]") != std::string::npos) {
+            linea.replace(linea.find("[D={D}]"), 7, "D =   " + std::to_string(D));
+        }
+        else if (linea.find("[b={b}]") != std::string::npos) {
+            linea.replace(linea.find("[b={b}]"), 7, "b =   " + std::to_string(d));
         }
         else if (linea.find("[{a}]") != std::string::npos) {
             linea.replace(linea.find("[{a}]"), 5, std::to_string(a) + "    ");
@@ -42,11 +50,10 @@ void Triangulo::Dibujar() const {
     archivo.close();
 }
 
-
-int Triangulo::CalcularArea() const {
-    return (b * h) / 2;
+int Rombo::CalcularArea() const {
+    return 4 * a;
 }
 
-int Triangulo::CalcularPerimetro() const {
-    return a + b + c;
+int Rombo::CalcularPerimetro() const {
+    return (D * d) / 2;
 }

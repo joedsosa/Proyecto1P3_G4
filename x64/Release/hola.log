@@ -1,0 +1,18 @@
+﻿  Cometa.cpp
+  Cuadrado.cpp
+  Figura.cpp
+  hola.cpp
+C:\Users\joeds\OneDrive\Escritorio\hola\hola.cpp(99,42): warning C4244: 'argument': conversion from 'double' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+  Paralelogramo.cpp
+  Rombo.cpp
+  Trapecio.cpp
+  Triangulo.cpp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 283 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  hola.vcxproj -> C:\Users\joeds\OneDrive\Escritorio\hola\x64\Release\hola.exe
